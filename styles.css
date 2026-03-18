@@ -1,9 +1,86 @@
-body{
-    background-color: rgb(245, 252, 243);
-    color:black;
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
+/* 1. LIGHT MODE COLORS (The Defaults) */
+h3{
+     color:rgb(82, 108, 95);
 }
+:root {
+    --bg-body: rgb(245, 252, 243);
+    --bg-container: rgb(228, 222, 215);
+    --text-main: black;
+    --text-headers: rgb(82, 108, 95);
+    --border-color: rgb(28, 25, 25);
+    --bg-highlight: rgb(247, 247, 141); 
+    --bg-quote: rgb(100, 131, 103);
+    --bg-sidebar: cadetblue;
+    --quote-text: rgb(82,108,95);
+}
+
+/* This section changes the colors ONLY when the moon is clicked */
+#dark-mode-toggle:checked ~ #page-content {
+    --bg-body: #121212;
+    --bg-container: #333e5c;
+    --text-main: #ffffff;
+    --text-headers: #8fbcbb;
+    --bg-highlight: #5c5c00; 
+    --bg-sidebar: #2d4f52;
+    --bg-quote: #8fbcbb;
+}
+
+/* 3. TOGGLE ICON LOGIC */
+#dark-mode-toggle { display: none; }
+.toggle-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1000;
+
+    /* NEW STUFF ↓ */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--border-color);
+    border-radius: 10px; /* makes it slightly rounded (optional) */
+    background-color: var(--bg-container);
+
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.toggle-icon::before { content: "🌙"; }
+#dark-mode-toggle:checked + .toggle-icon::before { content: "☀️"; }
+
+/* 4. APPLYING THE COLORS TO YOUR ELEMENTS */
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main); /* This tells the whole body to use our variable */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+/* This ensures all paragraphs specifically follow the variable */
+p {
+    line-height: 2.25em;
+    color: var(--text-main); 
+}
+
+h1, h2, h3 {
+    color: var(--text-headers);
+}
+
+#container {
+    width: 700px;
+    margin: 0 auto; 
+    background-color: var(--bg-container);
+    padding: 30px;
+    border: solid var(--border-color) 5px;
+}
+
+/* Keep the rest of your existing CSS (img, sidebar, media queries) below this */
+
 p{
     line-height: 2.25em;
 }
@@ -35,7 +112,7 @@ img{
     border: dotted 2px;
 }
 #container{
-    width: 2000px;
+    width: 700px;
     margin:0 auto; 
     background-color: rgb(228, 222, 215);
     padding:30px;
@@ -46,13 +123,25 @@ img{
     margin-right: 0;
     margin-left:20px;
 }
-.highlight{
-    background-color: rgb(247, 247, 141);
+.highlight {
+    background-color: var(--bg-highlight); /* Use variable */
     font-weight: bolder;
+    padding: 2px; /* Adds a little breathing room around the text */
+}
+
+#sidebar {
+    background-color: var(--bg-sidebar);    /* Use variable */
+    border: solid black;
+    padding: 10px;
+    width: 150px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s; /* Makes the color swap smooth */
 }
 a:link{
     font-weight: bold;
-    color:rgb(17, 91, 181);
+    color:rgb(83, 80, 242);
     text-decoration: none;
 }
 a:visited{
@@ -84,6 +173,36 @@ img:hover{
 }
 ul{
     line-height: 2em;
+}
+
+
+body {
+    background-color: var(--bg-body); /* Changed */
+    color: var(--text-main);          /* Changed */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s; /* Optional: Makes the color swap smooth */
+}
+
+h1, h2, h3 {
+    color: var(--text-headers);       /* Changed */
+}
+
+#quote {
+    font-family: fantasy;
+    color: var(--quote-text);         /* Changed */
+    border: solid 1px;
+    border-radius: 10%;
+}
+
+#container {
+    width: 700px;
+    margin: 0 auto;
+    background-color: var(--bg-container); /* Changed */
+    padding: 30px;
+    border: solid var(--border-color) 5px;   /* Changed */
+}
+
 }
 @media(max-width:1200px){
     #container{
