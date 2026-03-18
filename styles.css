@@ -2,6 +2,7 @@
 h3{
      color:rgb(82, 108, 95);
 }
+
 :root {
     --bg-body: rgb(245, 252, 243);
     --bg-container: rgb(228, 222, 215);
@@ -10,7 +11,7 @@ h3{
     --border-color: rgb(28, 25, 25);
     --bg-highlight: rgb(247, 247, 141); 
     --bg-quote: rgb(100, 131, 103);
-    --bg-sidebar: rgb(123, 200, 185);
+    --bg-sidebar: rgb(123, 200, 146);
     --quote-text: rgb(82,108,95);
 }
 
@@ -144,7 +145,7 @@ a:link{
     text-decoration: none;
 }
 a:visited{
-    color:brown;
+    color:rgb(70, 192, 114);
 }
 a:hover{
     text-decoration: underline;
@@ -157,7 +158,7 @@ img:hover{
     box-shadow: .5px;
 }
 #sidebar{
-    background-color: rgb(170, 214, 216);
+    background-color: rgb(187, 222, 223);
     border:solid black;
     padding:10px;
     width: 150px;
@@ -200,6 +201,72 @@ h1, h2, h3 {
     background-color: var(--bg-container); /* Changed */
     padding: 30px;
     border: solid var(--border-color) 5px;   /* Changed */
+}
+.funfactslist{
+    color:rgb(82, 108, 95);
+}
+.funfactslist{
+  color:black;
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  opacity: 0;
+  transform:translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+summary{
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+summary:hover{
+  background-color: #99ddff;
+}
+
+details{
+  background-color:#cceeff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+details[open] .funfactslist{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.funfactslist{
+  color:black;
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  opacity: 0;
+  transform:translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+summary{
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+summary:hover{
+  background-color: #99ddff;
+}
+
+details{
+  background-color:#cceeff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+details[open] .funfactslist{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
