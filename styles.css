@@ -23,6 +23,7 @@ h3{
     --bg-highlight: #5c5c00; 
     --bg-sidebar: #2d4f52;
     --bg-quote: #8fbcbb;
+    --quote-text: #8fbcbb;
 }
 
 /* 3. TOGGLE ICON LOGIC */
@@ -193,6 +194,7 @@ h1, h2, h3 {
     color: var(--quote-text);         /* Changed */
     border: solid 1px;
     border-radius: 10%;
+    font-weight: lighter;
 }
 
 #container {
@@ -225,11 +227,11 @@ summary{
 }
 
 summary:hover{
-  background-color: #99ddff;
+  background-color: #a8c3b6;
 }
 
 details{
-  background-color:#cceeff;
+  background-color:#d6efdc;
   padding: 10px;
   border-radius: 8px;
 }
