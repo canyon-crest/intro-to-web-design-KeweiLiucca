@@ -161,7 +161,7 @@ img:hover{
     background-color: rgb(187, 222, 223);
     border:solid black;
     padding:10px;
-    width: 150px;
+    width: 170px;
     float:right;
     margin-left: 20px;
     margin-bottom: 20px;
@@ -202,8 +202,10 @@ h1, h2, h3 {
     padding: 30px;
     border: solid var(--border-color) 5px;   /* Changed */
 }
-.funfactslist{
-    color:rgb(82, 108, 95);
+
+#funfacts{
+  color:black;
+  font-family: Arial, Helvetica, Verdana, sans-serif;
 }
 .funfactslist{
   color:black;
@@ -237,37 +239,7 @@ details[open] .funfactslist{
   transform: translateY(0);
 }
 
-.funfactslist{
-  color:black;
-  font-family: Arial, Helvetica, Verdana, sans-serif;
-  opacity: 0;
-  transform:translateY(-10px);
-  transition: all 0.3s ease;
-}
 
-summary{
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-summary:hover{
-  background-color: #99ddff;
-}
-
-details{
-  background-color:#cceeff;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-details[open] .funfactslist{
-  opacity: 1;
-  transform: translateY(0);
-}
 
 
 @media(max-width:1200px){
